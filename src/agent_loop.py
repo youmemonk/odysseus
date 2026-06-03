@@ -1466,6 +1466,7 @@ async def stream_agent_loop(
     # and can override this list for users who know their setup.
     _model_no_tools = any(kw in _model_lc for kw in (
         "deepseek-r1",
+        "qwen2.5vl",  # vision-language variant — Ollama returns 400 for tool schemas
     ))
     if _endpoint_supports is True:
         _is_api_model = True
